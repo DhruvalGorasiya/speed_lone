@@ -10,6 +10,7 @@ class BottomNavigationController extends GetxController{
 
   void changeIndex (int index){
     this.index = index.obs;
+    update();
     print(index);
   }
 
