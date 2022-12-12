@@ -17,7 +17,7 @@ class _LogInViewState extends State<LogInView> {
         onTap: () {
           Get.toNamed(Routes.homeView);
         },
-        child: Center(child: Text('Tap to GO HomeScreen')),
+        child: const Center(child: Text('Tap to GO HomeScreen')),
       ),
     );
   }
