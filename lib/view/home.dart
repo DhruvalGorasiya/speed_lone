@@ -14,43 +14,44 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: MediaQuery.of(context).size.height * 0.89,
-          width: MediaQuery.of(context).size.width * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(ImageConstants.homeBG), fit: BoxFit.contain),
+    return SafeArea(
+      child: Stack(
+        children: [
+          Image.asset(ImageConstants.homeBG),
+         /* Container(
+            height: Get.height * 0.89,
+            width: Get.width * 1,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(ImageConstants.homeBG), fit: BoxFit.fill),
+            ),
+          ),*/
+          Align(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: EdgeInsets.only(top: Get.width * 0.5,),
+              child: Image.asset(ImageConstants.applyNow,width: Get.width * 0.35),
+            ),
           ),
-        ),
-        Positioned(
-          top: MediaQuery.of(context).size.height * 0.05,
-          left: MediaQuery.of(context).size.width * 0.36,
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.5,
-            width: MediaQuery.of(context).size.width * 0.3,
-            child: Image.asset(ImageConstants.applyNow),
+          Padding(
+            padding: EdgeInsets.only(
+              top: Get.height * 0.5,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                customButton(onPressed: () {}, image: ImageConstants.instantLoan,context: context),
+                customButton(
+                    onPressed: () {
+                      Get.toNamed(Routes.calculatorView,);
+                    },
+                    image: ImageConstants.calculator,context: context),
+                customButton(onPressed: () {}, image: ImageConstants.loanStatus,context: context),
+              ],
+            ),
           ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.5,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CustomButton(onPressed: () {}, image: ImageConstants.instantLoan),
-              CustomButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.calculatorView);
-                  },
-                  image: ImageConstants.calculator),
-              CustomButton(onPressed: () {}, image: ImageConstants.loanStatus),
-            ],
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -22,17 +22,38 @@ class _CalculatorState extends State<Calculator> {
             width: Get.width,
             fit: BoxFit.fill,
           ),
+          Padding(
+            padding: EdgeInsets.only(
+                top: Get.height * 0.27,
+                left: Get.width * 0.02,
+                right: Get.width * 0.02,
+            bottom: Get.height * 0.17),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset(ImageConstants.compareLoan,
+                        height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
+                    Image.asset(ImageConstants.emiCalculator,
+                        height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset(ImageConstants.fdCalculator,
+                        height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
+                    Image.asset(ImageConstants.sipCalculator,
+                        height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
+                  ],
+                ),
+              ],
+            ),
+          )
         ]),
-      ) /*Container(
-        height: MediaQuery.of(context).size.height * 0.89,
-        width: MediaQuery.of(context).size.width * 1,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(ImageConstants.calculatorBG),
-              fit: BoxFit.contain),
-        ),
-      )*/
-      ,
+      ),
     );
   }
 }
