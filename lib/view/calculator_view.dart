@@ -17,7 +17,7 @@ class _CalculatorState extends State<Calculator> {
       body: SafeArea(
         child: Stack(children: [
           Image.asset(
-            ImageConstants.calculatorBG,
+            ImageConstant.calculatorBG,
             height: Get.height,
             width: Get.width,
             fit: BoxFit.fill,
@@ -34,18 +34,18 @@ class _CalculatorState extends State<Calculator> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset(ImageConstants.compareLoan,
+                    Image.asset(ImageConstant.compareLoan,
                         height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
-                    Image.asset(ImageConstants.emiCalculator,
+                    Image.asset(ImageConstant.emiCalculator,
                         height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset(ImageConstants.fdCalculator,
+                    Image.asset(ImageConstant.fdCalculator,
                         height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
-                    Image.asset(ImageConstants.sipCalculator,
+                    Image.asset(ImageConstant.sipCalculator,
                         height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
                   ],
                 ),
