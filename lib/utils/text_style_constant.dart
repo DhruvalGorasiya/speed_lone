@@ -14,4 +14,8 @@ class TextStyleConstant {
       color: ColorConstant.primaryColor,
       fontSize: 18,
       fontWeight: FontWeight.w900);
+  static const boldGrey18 = TextStyle(
+      color: ColorConstant.grey, fontSize: 16, fontWeight: FontWeight.w400);
+  static const boldBlack18 = TextStyle(
+      color: ColorConstant.black, fontSize: 18, fontWeight: FontWeight.w500);
 }

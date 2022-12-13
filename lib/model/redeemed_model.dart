@@ -56,5 +56,4 @@ List<RedeemedModel> redeemedList = [
     maxLoneAmount: 10000,
     minLoneAmount: 500000,
   ),
-
 ];
