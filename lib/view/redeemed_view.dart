@@ -15,7 +15,7 @@ class RedeemedView extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset('assets/backgrounds/recomadition.jpg',
-              height: Get.height, fit: BoxFit.fill),
+              height: Get.height,width: Get.width, fit: BoxFit.fill),
           Padding(
             padding: EdgeInsets.only(top: Get.height / 3.6),
             child: ListView.builder(

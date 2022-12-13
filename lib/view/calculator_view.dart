@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lone_counter/utils/image_constant.dart';
+import 'package:lone_counter/utils/routes.dart';
 
-class Calculator extends StatefulWidget {
-  const Calculator({Key? key}) : super(key: key);
+class CalculatorView extends StatefulWidget {
+  const CalculatorView({Key? key}) : super(key: key);
 
   @override
-  State<Calculator> createState() => _CalculatorState();
+  State<CalculatorView> createState() => _CalculatorViewState();
 }
 
-class _CalculatorState extends State<Calculator> {
+class _CalculatorViewState extends State<CalculatorView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,29 +24,33 @@ class _CalculatorState extends State<Calculator> {
           ),
           Padding(
             padding: EdgeInsets.only(
-                top: Get.height * 0.27,
+                top: Get.height * 0.30,
                 left: Get.width * 0.02,
                 right: Get.width * 0.02,
-            bottom: Get.height * 0.17),
+                bottom: Get.height * 0.17),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset(ImageConstant.compareLoan,
-                        height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
-                    Image.asset(ImageConstant.emiCalculator,
-                        height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
+                    imageTap(image: ImageConstant.emiCalculator,onTap: () {
+                      Get.toNamed(Routes.emiCalculatorView);
+                    },),
+                    imageTap(image: ImageConstant.compareLoan)
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset(ImageConstant.fdCalculator,
-                        height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
-                    Image.asset(ImageConstant.sipCalculator,
-                        height: Get.height * 0.22, width: Get.width * 0.3,fit: BoxFit.fill),
+                    imageTap(
+                      image: ImageConstant.fdCalculator,
+                      onTap: () {},
+                    ),
+                    imageTap(
+                      image: ImageConstant.sipCalculator,
+                      onTap: () {},
+                    ),
                   ],
                 ),
               ],
@@ -54,6 +58,14 @@ class _CalculatorState extends State<Calculator> {
           )
         ]),
       ),
+    );
+  }
+
+  Widget imageTap({VoidCallback? onTap, required String image}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Image.asset(image,
+          height: Get.height * 0.21, width: Get.width * 0.28, fit: BoxFit.fill),
     );
   }
 }

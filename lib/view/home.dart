@@ -17,15 +17,7 @@ class _HomeViewState extends State<HomeView> {
     return SafeArea(
       child: Stack(
         children: [
-          Image.asset(ImageConstant.homeBG),
-         /* Container(
-            height: Get.height * 0.89,
-            width: Get.width * 1,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(ImageConstants.homeBG), fit: BoxFit.fill),
-            ),
-          ),*/
+          Image.asset(ImageConstant.homeBG,width: Get.width,height: Get.height,fit: BoxFit.fill),
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
