@@ -59,7 +59,7 @@ class EmiCalculatorView extends StatelessWidget {
           height: Get.height * 0.085,
           margin: EdgeInsets.only(
               top: Get.height * 0.01, bottom: Get.height * 0.02),
-          child: TextFormFieldWidgets(
+          child: customTextField(
             controller: controller,
             keyboardType: TextInputType.number,
             hintText: hintText,

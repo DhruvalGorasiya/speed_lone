@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "340714442675",
+    "project_id": "speedloan-21003",
+    "storage_bucket": "speedloan-21003.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340714442675:android:b2db19651479358ede05c6",
+        "android_client_info": {
+          "package_name": "com.speedloan.cashloan.balance_hero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340714442675-9ocndl70942q0siep12eod0qcqli9r9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw3AwJvbHXdPrcLgCXABtpH8axWx2wpVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340714442675-9ocndl70942q0siep12eod0qcqli9r9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

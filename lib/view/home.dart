@@ -17,12 +17,20 @@ class _HomeViewState extends State<HomeView> {
     return SafeArea(
       child: Stack(
         children: [
-          Image.asset(ImageConstant.homeBG,width: Get.width,height: Get.height,fit: BoxFit.fill),
+          Image.asset(ImageConstant.homeBG,
+              width: Get.width, height: Get.height, fit: BoxFit.fill),
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: EdgeInsets.only(top: Get.width * 0.5,),
-              child: Image.asset(ImageConstant.applyNow,width: Get.width * 0.35),
+              padding: EdgeInsets.only(
+                top: Get.width * 0.5,
+              ),
+              child: GestureDetector(
+                  onTap: () {
+                    Get.toNamed(Routes.loanDetailView);
+                  },
+                  child: Image.asset(ImageConstant.applyNow,
+                      width: Get.width * 0.35)),
             ),
           ),
           Padding(
@@ -32,13 +40,22 @@ class _HomeViewState extends State<HomeView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                customButton(onPressed: () {}, image: ImageConstant.instantLoan,context: context),
+                customButton(
+                    onPressed: () {},
+                    image: ImageConstant.instantLoan,
+                    context: context),
                 customButton(
                     onPressed: () {
-                      Get.toNamed(Routes.calculatorView,);
+                      Get.toNamed(
+                        Routes.calculatorView,
+                      );
                     },
-                    image: ImageConstant.calculator,context: context),
-                customButton(onPressed: () {}, image: ImageConstant.loanStatus,context: context),
+                    image: ImageConstant.calculator,
+                    context: context),
+                customButton(
+                    onPressed: () {},
+                    image: ImageConstant.loanStatus,
+                    context: context),
               ],
             ),
           ),
