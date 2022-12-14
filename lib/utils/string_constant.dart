@@ -3,4 +3,6 @@ class StringConstant {
   static const loanDetail = 'Loan Detail';
   static const personalDetail = 'Personal Detail';
   static const contactDetails = 'Contact Details';
+  static const compareCalculator = 'Compress Loan';
 }
+

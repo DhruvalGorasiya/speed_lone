@@ -42,18 +42,18 @@ Widget customTextField({
     validator: validator,
     cursorColor: ColorConstant.primaryColor,
     controller: controller,
-    style: TextStyleConstant.bold14.copyWith(color: ColorConstant.black),
+    style: TextStyleConstant.bold16.copyWith(color: ColorConstant.black),
     textAlignVertical: TextAlignVertical.center,
     decoration: InputDecoration(
       focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide:
-              const BorderSide(color: ColorConstant.primaryColor, width: 2)),
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+          borderSide: const BorderSide(color: ColorConstant.primaryColor,width: 2)),
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0)),
       labelText: label,
       floatingLabelStyle:
-          TextStyleConstant.bold14.copyWith(color: ColorConstant.black),
-      labelStyle: TextStyleConstant.bold14.copyWith(color: ColorConstant.black),
+          TextStyleConstant.bold16.copyWith(color: ColorConstant.black),
+      labelStyle: TextStyleConstant.bold16.copyWith(color: ColorConstant.black),
       contentPadding: EdgeInsets.only(
         left: Get.width * 0.04,
         top: Get.height * 0.04,

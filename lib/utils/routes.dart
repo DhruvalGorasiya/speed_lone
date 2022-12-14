@@ -7,4 +7,5 @@ class Routes {
   static const loanDetailView = '/loanDetailView';
   static const personalDetailView = '/personalDetailView';
   static const contactDetailView = '/contactDetailView';
+  static const compareLoneCalculator = '/compareLoneCalculator';
 }

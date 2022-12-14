@@ -71,10 +71,15 @@ class RedeemedView extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(left: Get.width * 0.04),
-                child: Text(
-                  name,
-                  style: TextStyleConstant.bold18
-                      .copyWith(color: ColorConstant.black),
+                child: Container(
+                  width: 175,
+                  child: Text(
+                    name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyleConstant.bold18
+                        .copyWith(color: ColorConstant.black),
+                  ),
                 ),
               ),
               const Spacer(),
@@ -105,13 +110,13 @@ class RedeemedView extends StatelessWidget {
             children: [
               Text(
                 'Daily interest rate',
-                style: TextStyleConstant.bold14.copyWith(
+                style: TextStyleConstant.bold16.copyWith(
                     color: ColorConstant.primaryColor,
                     fontWeight: FontWeight.w400),
               ),
               Text(
                 'Lone Amount',
-                style: TextStyleConstant.bold14.copyWith(
+                style: TextStyleConstant.bold16.copyWith(
                     color: ColorConstant.primaryColor,
                     fontWeight: FontWeight.w400),
               )
