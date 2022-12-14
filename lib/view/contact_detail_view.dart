@@ -30,25 +30,49 @@ class ContactDetailView extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                   horizontal: Get.width * 0.04, vertical: Get.height * 0.02),
               child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    nameField(
+                child: Form(
+                  key: contactDetailController.formKey,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  child: Column(
+                    children: [
+                      nameField(
                         "Contact:",
                         "+91 7069787178",
                         contactDetailController.contactController,
-                        TextInputType.number),
-                    nameField(
+                        TextInputType.number,
+                        (value) {
+                          if (value != null && value.length < 10) {
+                            return "Invalid Mobile number";
+                          } else {
+                            return null;
+                          }
+                        },
+                        (value) => contactDetailController.number.value = value,
+                      ),
+                      nameField(
                         "Email:",
                         "Deo@gmail.com",
                         contactDetailController.emailController,
-                        TextInputType.emailAddress),
-                    SizedBox(
-                      height: Get.height * 0.02,
-                    ),
-                    elevatedButton(() {
-                      // Get.toNamed(Routes.personalDetailView);
-                    }),
-                  ],
+                        TextInputType.emailAddress,
+                        (value) {
+                          value != null &&
+                                  contactDetailController.validateEmail(value)
+                              ? "Enter Valid Email"
+                              : null;
+                        },
+                        (value) => contactDetailController.email.value = value,
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.02,
+                      ),
+                      elevatedButton(() {
+                        final isValidForm = contactDetailController
+                            .formKey.currentState!
+                            .validate();
+                        // Get.toNamed(Routes.personalDetailView);
+                      }),
+                    ],
+                  ),
                 ),
               ),
             ),

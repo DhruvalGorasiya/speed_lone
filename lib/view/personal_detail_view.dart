@@ -33,15 +33,31 @@ class PersonalDetailView extends StatelessWidget {
                 child: Column(
                   children: [
                     nameField(
-                        "First Name:",
-                        "John",
-                        personalDetailController.firstNameController,
-                        TextInputType.text),
+                      "First Name:",
+                      "John",
+                      personalDetailController.firstNameController,
+                      TextInputType.text,
+                      (value) {
+                        // value != null &&
+                        //     contactDetailController.validateEmail(value)
+                        //     ? "Enter Valid Email"
+                        //     : null;
+                      },
+                      (value) {},
+                    ),
                     nameField(
-                        "Last Name:",
-                        "Deo",
-                        personalDetailController.lastNameController,
-                        TextInputType.text),
+                      "Last Name:",
+                      "Deo",
+                      personalDetailController.lastNameController,
+                      TextInputType.text,
+                      (value) {
+                        // value != null &&
+                        //     contactDetailController.validateEmail(value)
+                        //     ? "Enter Valid Email"
+                        //     : null;
+                      },
+                      (value) {},
+                    ),
                     const Text("Enter name as mention on id proof"),
                     SizedBox(
                       height: Get.height * 0.02,

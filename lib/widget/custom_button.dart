@@ -52,8 +52,13 @@ Widget textField(
   );
 }
 
-Widget nameField(String title, hintText, TextEditingController controller,
-    TextInputType type) {
+Widget nameField(
+    String title,
+    hintText,
+    TextEditingController controller,
+    TextInputType type,
+    String? Function(String?)? validator,
+    ValueChanged<String>? onChange) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -65,7 +70,9 @@ Widget nameField(String title, hintText, TextEditingController controller,
         height: Get.height * 0.085,
         margin:
             EdgeInsets.only(top: Get.height * 0.01, bottom: Get.height * 0.02),
-        child: TextField(
+        child: TextFormField(
+          onChanged: onChange,
+          validator: validator,
           keyboardType: type,
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
