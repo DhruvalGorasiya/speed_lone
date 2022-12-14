@@ -4,4 +4,5 @@ class Routes {
   static const homeView = '/HomeView';
   static const calculatorView = '/calculatorView';
   static const emiCalculatorView = '/emiCalculatorView';
+  static const compareLoneCalculator = '/compareLoneCalculator';
 }

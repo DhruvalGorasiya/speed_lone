@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:lone_counter/view/bottom_navigation_view.dart';
 import 'package:lone_counter/view/calculator_view.dart';
+import 'package:lone_counter/view/compare_lone_view.dart';
 import 'package:lone_counter/view/emi_calculator_view.dart';
 import 'package:lone_counter/view/splash_view.dart';
 import 'package:lone_counter/utils/routes.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: Routes.homeView, page: () => BottomNavigationScreen()),
         GetPage(name: Routes.calculatorView, page: () => const CalculatorView()),
         GetPage(name: Routes.emiCalculatorView, page: () => EmiCalculatorView()),
+        GetPage(name: Routes.compareLoneCalculator, page: () => CompareLoneCalculator()),
       ],
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.splashView,

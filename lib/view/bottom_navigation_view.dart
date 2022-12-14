@@ -15,29 +15,32 @@ class BottomNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<BottomNavigationController>(builder: (controller) {
       return Scaffold(
-          bottomNavigationBar:BottomNavigationBar(
-            currentIndex: controller.index.value,
-            onTap: controller.changeIndex,
-            selectedLabelStyle: TextStyleConstant.bold14,
-            selectedItemColor: ColorConstant.primaryColor,
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                  icon: Padding(
-                    padding:const EdgeInsets.only(bottom: 5),
-                    child: Image.asset(controller.index.value == 0 ? ImageConstant.gifRed:ImageConstant.gifBlack,
+          bottomNavigationBar:Container(
+            height: Get.height * 0.08,
+            child: BottomNavigationBar(
+              currentIndex: controller.index.value,
+              onTap: controller.changeIndex,
+              selectedLabelStyle: TextStyleConstant.bold16.copyWith(fontSize: 12),
+              selectedItemColor: ColorConstant.primaryColor,
+              type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                    icon: Padding(
+                      padding:const EdgeInsets.only(bottom: 5),
+                      child: Image.asset(controller.index.value == 0 ? ImageConstant.gifRed:ImageConstant.gifBlack,
+                      height: 25),
+                    ),
+                    label: "Redeemed"),
+                BottomNavigationBarItem(
+                    icon: Image.asset(controller.index.value == 1?ImageConstant.homeRed:ImageConstant.homeBlack,
                     height: 25),
-                  ),
-                  label: "Redeemed"),
-              BottomNavigationBarItem(
-                  icon: Image.asset(controller.index.value == 1?ImageConstant.homeRed:ImageConstant.homeBlack,
-                  height: 25),
-                  label: "Home"),
-              BottomNavigationBarItem(
-                  icon: Image.asset(controller.index.value == 2 ?ImageConstant.profileRed : ImageConstant.profileBack,
-                  height: 25),
-                  label: "Profile"),
-            ],
+                    label: "Home"),
+                BottomNavigationBarItem(
+                    icon: Image.asset(controller.index.value == 2 ?ImageConstant.profileRed : ImageConstant.profileBack,
+                    height: 25),
+                    label: "Profile"),
+              ],
+            ),
           ),
           body: IndexedStack(
             index: controller.index.value,

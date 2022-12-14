@@ -37,7 +37,7 @@ class _CalculatorViewState extends State<CalculatorView> {
                     imageTap(image: ImageConstant.emiCalculator,onTap: () {
                       Get.toNamed(Routes.emiCalculatorView);
                     },),
-                    imageTap(image: ImageConstant.compareLoan)
+                    imageTap(image: ImageConstant.compareLoan,onTap: () => Get.toNamed(Routes.compareLoneCalculator))
                   ],
                 ),
                 Row(

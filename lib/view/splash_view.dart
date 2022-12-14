@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 3000),() {
+    Future.delayed(const Duration(milliseconds: 5000),() {
       Get.offNamed(Routes.homeView);
     },);
   }
@@ -21,6 +21,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:Center(child: Image.asset("assets/new splash screen.gif",fit: BoxFit.fitWidth,)));
+        body:Center(child: Image.asset("assets/splash_screen.gif",fit: BoxFit.fitWidth,)));
   }
 }
