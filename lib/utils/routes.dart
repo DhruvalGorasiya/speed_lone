@@ -9,4 +9,8 @@ class Routes {
   static const contactDetailView = '/contactDetailView';
   static const compareLoneCalculator = '/compareLoneCalculator';
   static const instantLoanView = '/instantLoanView';
+  static const ageDetailView = '/ageDetailView';
+  static const bankDetailView = '/bankDetailView';
+  static const panDetailView = '/panDetailView';
+  static const finalOfferView = '/finalOfferView';
 }

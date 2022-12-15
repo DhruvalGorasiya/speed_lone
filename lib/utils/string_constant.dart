@@ -6,4 +6,8 @@ class StringConstant {
   static const compareCalculator = 'Compress Loan';
   static const loanInstant = 'Loan Instant';
   static const setting = 'Setting';
+  static const ageDetail = 'Age Detail';
+  static const bankDetail = 'Bank Detail';
+  static const panCardDetail = 'Pan Card Detail';
+  static const finalOfferView = 'Accept Final Offer';
 }

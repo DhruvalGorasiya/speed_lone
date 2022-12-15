@@ -12,6 +12,7 @@ class LoanDetailView extends StatelessWidget {
   LoanDetailView({Key? key}) : super(key: key);
   final LoanDetailController loanDetailController =
       Get.put(LoanDetailController());
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<LoanDetailController>(
@@ -32,12 +33,25 @@ class LoanDetailView extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    textField("Amount:", "5,00,000",
-                        loanDetailController.amountController, 6),
-                    textField("Tenure in Month:", "50",
-                        loanDetailController.tenureController, 2),
+                    textField(
+                        title: "Amount:",
+                        maxLength: 10,
+                        hintText: "5,00,000",
+                        controller: loanDetailController.amountController,
+                      errorText: controller.amtError
+                       ),
+                    textField(
+                        title: "Tenure in Month:",
+                        hintText: "50",
+                        maxLength: 10,
+                        controller: loanDetailController.tenureController,
+                       errorText: controller.tenureError),
                     elevatedButton(() {
-                      Get.toNamed(Routes.personalDetailView);
+                      controller.validator();
+
+                      if(controller.amtError == null && controller.tenureError == null) {
+                        Get.toNamed(Routes.personalDetailView);
+                      }
                     }),
                   ],
                 ),

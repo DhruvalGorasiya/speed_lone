@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:intl/intl.dart';
 import 'package:lone_counter/controller/redeemed_controller.dart';
-import 'package:lone_counter/model/redeemed_model.dart';
-import 'package:lone_counter/servics/firebase_servics.dart';
 import 'package:lone_counter/utils/colors_constant.dart';
 import 'package:lone_counter/utils/image_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
 import 'package:store_redirect/store_redirect.dart';
 
 class RedeemedView extends StatelessWidget {
+  final RedeemedController controller = Get.put(RedeemedController());
+
+  RedeemedView({Key? key}) : super(key: key);
+
   final RedeemedController controller = Get.put(RedeemedController());
 
   RedeemedView({Key? key}) : super(key: key);
@@ -44,7 +45,6 @@ class RedeemedView extends StatelessWidget {
           ),
         ));
   }
-
   Widget _child(
       {required int maxLoneAmount,
       required int minLoneAmount,
@@ -89,11 +89,41 @@ class RedeemedView extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyleConstant.bold18
-                        .copyWith(color: ColorConstant.black),
+                        .copyWith(color: ColorConstant.black),),),),
+              Expanded(
+                child: Container(
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(ImageConstant.loneIcon),
+                      )),
+                  height: Get.height * 0.05,
+                  width: Get.width * 0.1,
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: EdgeInsets.only(left: Get.width * 0.04),
+                  child: Container(
+                    width: 175,
+                    child: Text(
+                      name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyleConstant.bold18
+                          .copyWith(color: ColorConstant.black),
+                    ),
                   ),
                 ),
               ),
               const Spacer(),
+              GestureDetector(
+                onTap: () async {
+                  await StoreRedirect.redirect(androidAppId: apkId);
+                },
+                child: Image.asset(
+                  ImageConstant.apply,
+                  height: Get.height * 0.05,),),
               Expanded(
                 flex: 12,
                 child: GestureDetector(
