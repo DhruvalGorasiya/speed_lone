@@ -6,7 +6,6 @@ import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/utils/string_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
 import 'package:lone_counter/widget/custom_button.dart';
-import 'package:lone_counter/widget/custom_text_field.dart';
 
 class PersonalDetailView extends StatelessWidget {
   PersonalDetailView({Key? key}) : super(key: key);
@@ -38,6 +37,8 @@ class PersonalDetailView extends StatelessWidget {
                       personalDetailController.firstNameController,
                       TextInputType.text,
                       (value) {
+                        return null;
+
                         // value != null &&
                         //     contactDetailController.validateEmail(value)
                         //     ? "Enter Valid Email"
@@ -51,6 +52,8 @@ class PersonalDetailView extends StatelessWidget {
                       personalDetailController.lastNameController,
                       TextInputType.text,
                       (value) {
+                        return null;
+
                         // value != null &&
                         //     contactDetailController.validateEmail(value)
                         //     ? "Enter Valid Email"

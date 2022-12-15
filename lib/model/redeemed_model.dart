@@ -2,6 +2,8 @@ class RedeemedModel {
   int? id;
   String? name;
   String? interestRate;
+  String? imageUrl;
+  String? lunchAppId;
   int? minLoneAmount;
   int? maxLoneAmount;
 
@@ -10,7 +12,9 @@ class RedeemedModel {
       this.name,
       this.interestRate,
       this.minLoneAmount,
-      this.maxLoneAmount});
+      this.maxLoneAmount,
+      this.imageUrl,
+      this.lunchAppId});
 }
 
 List<RedeemedModel> redeemedList = [

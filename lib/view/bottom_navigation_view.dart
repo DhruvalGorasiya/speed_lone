@@ -15,7 +15,7 @@ class BottomNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<BottomNavigationController>(builder: (controller) {
       return Scaffold(
-          bottomNavigationBar:Container(
+          bottomNavigationBar:SizedBox(
             height: Get.height * 0.08,
             child: BottomNavigationBar(
               currentIndex: controller.index.value,

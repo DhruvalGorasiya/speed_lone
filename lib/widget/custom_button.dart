@@ -45,7 +45,7 @@ Widget textField(
           controller: controller,
           keyboardType: TextInputType.number,
           hintText: hintText,
-          maxLength: length ?? 0,
+          maxLength: length,
         ),
       ),
     ],

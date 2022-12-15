@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lone_counter/controller/contact_detail_controller.dart';
 import 'package:lone_counter/utils/colors_constant.dart';
-import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/utils/string_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
 import 'package:lone_counter/widget/custom_button.dart';
@@ -59,6 +58,7 @@ class ContactDetailView extends StatelessWidget {
                                   contactDetailController.validateEmail(value)
                               ? "Enter Valid Email"
                               : null;
+                          return null;
                         },
                         (value) => contactDetailController.email.value = value,
                       ),
@@ -66,9 +66,6 @@ class ContactDetailView extends StatelessWidget {
                         height: Get.height * 0.02,
                       ),
                       elevatedButton(() {
-                        final isValidForm = contactDetailController
-                            .formKey.currentState!
-                            .validate();
                         // Get.toNamed(Routes.personalDetailView);
                       }),
                     ],

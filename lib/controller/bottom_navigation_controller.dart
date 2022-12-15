@@ -15,7 +15,7 @@ class BottomNavigationController extends GetxController{
 
 
   List<Widget> screens = [
-    const RedeemedView(),
+     RedeemedView(),
     const HomeView(),
     const ProfileView(),
   ];

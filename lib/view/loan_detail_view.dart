@@ -5,7 +5,6 @@ import 'package:lone_counter/utils/colors_constant.dart';
 import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
 import 'package:lone_counter/widget/custom_button.dart';
-import 'package:lone_counter/widget/custom_text_field.dart';
 
 import '../utils/string_constant.dart';
 

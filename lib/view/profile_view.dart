@@ -19,7 +19,7 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return Center(
-      child: Text("Profile"),
+      child: const Text("Profile"),
     );
   }
 }
