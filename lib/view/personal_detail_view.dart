@@ -11,6 +11,7 @@ class PersonalDetailView extends StatelessWidget {
   PersonalDetailView({Key? key}) : super(key: key);
   final PersonalDetailController personalDetailController =
       Get.put(PersonalDetailController());
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<PersonalDetailController>(
@@ -31,43 +32,34 @@ class PersonalDetailView extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    nameField(
-                      "First Name:",
-                      "John",
-                      personalDetailController.firstNameController,
-                      TextInputType.text,
-                      (value) {
-                        return null;
-
-                        // value != null &&
-                        //     contactDetailController.validateEmail(value)
-                        //     ? "Enter Valid Email"
-                        //     : null;
-                      },
-                      (value) {},
-                    ),
-                    nameField(
-                      "Last Name:",
-                      "Deo",
-                      personalDetailController.lastNameController,
-                      TextInputType.text,
-                      (value) {
-                        return null;
-
-                        // value != null &&
-                        //     contactDetailController.validateEmail(value)
-                        //     ? "Enter Valid Email"
-                        //     : null;
-                      },
-                      (value) {},
-                    ),
+                    textField(
+                        title: "First Name:",
+                        hintText: "John",
+                        controller:
+                            personalDetailController.firstNameController,
+                        type: TextInputType.text,
+                        errorText: controller.fNameError,
+                        maxLength: 10),
+                    textField(
+                        title: "Last Name:",
+                        maxLength: 10,
+                        hintText: "Deo",
+                        controller: personalDetailController.lastNameController,
+                        type: TextInputType.text,
+                        errorText: controller.lNameError),
                     const Text("Enter name as mention on id proof"),
                     SizedBox(
                       height: Get.height * 0.02,
                     ),
-                    elevatedButton(() {
-                      Get.toNamed(Routes.contactDetailView);
-                    }),
+                    elevatedButton(
+                      () {
+                        controller.validator();
+                        if (controller.lNameError == null &&
+                            controller.fNameError == null) {
+                          Get.toNamed(Routes.contactDetailView);
+                        }
+                      },
+                    ),
                   ],
                 ),
               ),

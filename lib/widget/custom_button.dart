@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:lone_counter/utils/colors_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
@@ -18,78 +19,45 @@ Widget customButton(
   );
 }
 
-Widget elevatedButton(VoidCallback onTap) {
+Widget elevatedButton(VoidCallback onTap,{String? text}) {
   return ElevatedButton(
     onPressed: onTap,
     style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all(ColorConstant.primaryColor),
     ),
-    child: const Text("Next"),
+    child: Text(text ?? "Next"),
   );
 }
 
 Widget textField(
-    String title, hintText, TextEditingController controller, int length) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        title,
-        style: TextStyleConstant.boldBlack18,
-      ),
-      Container(
-        height: Get.height * 0.085,
-        margin:
-            EdgeInsets.only(top: Get.height * 0.01, bottom: Get.height * 0.02),
-        child: customTextField(
+    {required String title,
+    required String hintText,
+      TextInputType? type,
+      int? maxLength,
+      ValueChanged<String>? onChanged,
+      List<TextInputFormatter>? inputFormatters,
+    required TextEditingController controller,
+      String? errorText}) {
+  return Padding(
+    padding: EdgeInsets.only(top: Get.height * 0.02),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: TextStyleConstant.boldBlack18,
+        ),
+        customTextField(
           controller: controller,
-          keyboardType: TextInputType.number,
+          errorText: errorText,
+          maxLength: maxLength,
+          keyboardType: type ?? TextInputType.number,
           hintText: hintText,
-          maxLength: length,
+          onChanged: onChanged,
+inputFormatters: inputFormatters
+          // maxLength: length,
         ),
-      ),
-    ],
-  );
-}
-
-Widget nameField(
-    String title,
-    hintText,
-    TextEditingController controller,
-    TextInputType type,
-    String? Function(String?)? validator,
-    ValueChanged<String>? onChange) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        title,
-        style: TextStyleConstant.boldBlack18,
-      ),
-      Container(
-        height: Get.height * 0.085,
-        margin:
-            EdgeInsets.only(top: Get.height * 0.01, bottom: Get.height * 0.02),
-        child: TextFormField(
-          onChanged: onChange,
-          validator: validator,
-          keyboardType: type,
-          decoration: InputDecoration(
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide: const BorderSide(
-                    color: ColorConstant.primaryColor, width: 2)),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
-            contentPadding: EdgeInsets.only(
-              left: Get.width * 0.04,
-              top: Get.height * 0.04,
-            ),
-            hintText: hintText,
-            hintStyle: TextStyleConstant.boldGrey18,
-          ),
-        ),
-      ),
-    ],
+      ],
+    ),
   );
 }

@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:lone_counter/view/age_detail.dart';
+import 'package:lone_counter/view/bank_detail_view.dart';
 import 'package:lone_counter/view/bottom_navigation_view.dart';
 import 'package:lone_counter/view/calculator_view.dart';
-
 import 'package:lone_counter/view/contact_detail_view.dart';
-
 import 'package:lone_counter/view/compare_lone_view.dart';
-
 import 'package:lone_counter/view/emi_calculator_view.dart';
+import 'package:lone_counter/view/final_offer_view.dart';
+import 'package:lone_counter/view/pan_details_view.dart';
 import 'package:lone_counter/view/personal_detail_view.dart';
 import 'package:lone_counter/view/splash_view.dart';
 import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/view/log_in_view.dart';
-
 import 'view/loan_detail_view.dart';
 
 void main() {
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: Routes.splashView, page: () => const SplashScreen()),
         GetPage(name: Routes.loginView, page: () => const LogInView()),
         GetPage(name: Routes.homeView, page: () => BottomNavigationScreen()),
+        GetPage(name: Routes.ageDetailView, page: () => AgeDetail()),
         GetPage(
             name: Routes.calculatorView, page: () => const CalculatorView()),
         GetPage(
@@ -54,6 +55,9 @@ class MyApp extends StatelessWidget {
             name: Routes.calculatorView, page: () => const CalculatorView()),
         GetPage(
             name: Routes.emiCalculatorView, page: () => EmiCalculatorView()),
+        GetPage(name: Routes.bankDetailView, page: () => BankDetailView()),
+        GetPage(name: Routes.panDetailView, page: () => PanDetailView()),
+        GetPage(name: Routes.finalOfferView, page: () => const FinalOfferView()),
         GetPage(
             name: Routes.compareLoneCalculator,
             page: () => CompareLoneCalculator()),

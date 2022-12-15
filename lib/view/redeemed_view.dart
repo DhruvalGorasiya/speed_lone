@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:intl/intl.dart';
 import 'package:lone_counter/controller/redeemed_controller.dart';
-import 'package:lone_counter/model/redeemed_model.dart';
-import 'package:lone_counter/servics/firebase_servics.dart';
 import 'package:lone_counter/utils/colors_constant.dart';
 import 'package:lone_counter/utils/image_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
@@ -12,8 +9,10 @@ import 'package:store_redirect/store_redirect.dart';
 
 class RedeemedView extends StatelessWidget {
 
-final RedeemedController controller =  Get.put(RedeemedController());
-   RedeemedView({Key? key}) : super(key: key);
+  final RedeemedController controller = Get.put(RedeemedController());
+
+  RedeemedView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Obx(() =>
@@ -45,6 +44,7 @@ final RedeemedController controller =  Get.put(RedeemedController());
           ),
         ));
   }
+}
   Widget _child(
       {required int maxLoneAmount,
       required int minLoneAmount,
@@ -75,9 +75,9 @@ final RedeemedController controller =  Get.put(RedeemedController());
               Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                  image: NetworkImage(imgUrl),
-                )
-    ),
+                      image: NetworkImage(imgUrl),
+                    )
+                ),
                 height: Get.height * 0.05,
                 width: Get.width * 0.1,
               ),
@@ -95,8 +95,8 @@ final RedeemedController controller =  Get.put(RedeemedController());
                 child: Container(
                   decoration: const BoxDecoration(
                       image: DecorationImage(
-                    image: AssetImage(ImageConstant.loneIcon),
-                  )),
+                        image: AssetImage(ImageConstant.loneIcon),
+                      )),
                   height: Get.height * 0.05,
                   width: Get.width * 0.1,
                 ),
@@ -120,7 +120,7 @@ final RedeemedController controller =  Get.put(RedeemedController());
               const Spacer(),
               GestureDetector(
                 onTap: () async {
-                 await StoreRedirect.redirect(androidAppId: apkId);
+                  await StoreRedirect.redirect(androidAppId: apkId);
                 },
                 child: Image.asset(
                   ImageConstant.apply,
@@ -147,7 +147,10 @@ final RedeemedController controller =  Get.put(RedeemedController());
                     .copyWith(color: ColorConstant.black),
               ),
               Text(
-                '₹ ${NumberFormat.currency(locale: 'HI').format(minLoneAmount).replaceAll("INR", '')} - ${NumberFormat.currency(locale: "HI").format(maxLoneAmount).replaceAll("INR", '')}',
+                '₹ ${NumberFormat.currency(locale: 'HI')
+                    .format(minLoneAmount)
+                    .replaceAll("INR", '')} - ${NumberFormat.currency(
+                    locale: "HI").format(maxLoneAmount).replaceAll("INR", '')}',
                 style: TextStyleConstant.bold18
                     .copyWith(color: ColorConstant.black),
               )
@@ -172,4 +175,4 @@ final RedeemedController controller =  Get.put(RedeemedController());
           ),
         ],
       ),
-    );
+    );}
