@@ -11,6 +11,7 @@ import 'package:lone_counter/view/contact_detail_view.dart';
 import 'package:lone_counter/view/compare_lone_view.dart';
 
 import 'package:lone_counter/view/emi_calculator_view.dart';
+import 'package:lone_counter/view/instant_loan_view.dart';
 import 'package:lone_counter/view/personal_detail_view.dart';
 import 'package:lone_counter/view/splash_view.dart';
 import 'package:lone_counter/utils/routes.dart';
@@ -21,11 +22,7 @@ import 'view/loan_detail_view.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
-  MobileAds.instance
-    ..initialize()
-    ..updateRequestConfiguration(
-      RequestConfiguration(testDeviceIds: ['B5CD2C70D9D7D5393FA2D179D6434CFC']),
-    );
+  MobileAds.instance.initialize();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
@@ -57,6 +54,7 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: Routes.compareLoneCalculator,
             page: () => CompareLoneCalculator()),
+        GetPage(name: Routes.instantLoanView, page: () => InstantLoanView()),
       ],
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.splashView,

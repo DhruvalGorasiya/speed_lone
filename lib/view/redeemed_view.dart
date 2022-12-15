@@ -11,13 +11,13 @@ import 'package:lone_counter/utils/text_style_constant.dart';
 import 'package:store_redirect/store_redirect.dart';
 
 class RedeemedView extends StatelessWidget {
+  final RedeemedController controller = Get.put(RedeemedController());
 
-final RedeemedController controller =  Get.put(RedeemedController());
-   RedeemedView({Key? key}) : super(key: key);
+  RedeemedView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Obx(() =>
-        SafeArea(
+    return Obx(() => SafeArea(
           child: Stack(
             children: [
               Image.asset('assets/backgrounds/recomadition.jpg',
@@ -29,15 +29,14 @@ final RedeemedController controller =  Get.put(RedeemedController());
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
                     return _child(
-                        maxLoneAmount: controller
-                            .data[index]['max_lone_amount'],
-                        minLoneAmount: controller
-                            .data[index]['min_lone_amount'],
+                        maxLoneAmount: controller.data[index]
+                            ['max_lone_amount'],
+                        minLoneAmount: controller.data[index]
+                            ['min_lone_amount'],
                         name: controller.data[index]['name'],
                         loneInterest: controller.data[index]['interest_rate'],
                         apkId: controller.data[index]['lanuch_app_id'],
-                        imgUrl: controller.data[index]['img_url']
-                    );
+                        imgUrl: controller.data[index]['img_url']);
                   },
                 ),
               ),
@@ -45,12 +44,13 @@ final RedeemedController controller =  Get.put(RedeemedController());
           ),
         ));
   }
+
   Widget _child(
       {required int maxLoneAmount,
       required int minLoneAmount,
       required String loneInterest,
       required String imgUrl,
-        required String apkId,
+      required String apkId,
       required String name}) {
     return Container(
       margin: EdgeInsets.symmetric(
@@ -76,8 +76,7 @@ final RedeemedController controller =  Get.put(RedeemedController());
                 decoration: BoxDecoration(
                     image: DecorationImage(
                   image: NetworkImage(imgUrl),
-                )
-    ),
+                )),
                 height: Get.height * 0.05,
                 width: Get.width * 0.1,
               ),
@@ -90,45 +89,17 @@ final RedeemedController controller =  Get.put(RedeemedController());
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyleConstant.bold18
-                        .copyWith(color: ColorConstant.black),),),),
-              Expanded(
-                child: Container(
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                    image: AssetImage(ImageConstant.loneIcon),
-                  )),
-                  height: Get.height * 0.05,
-                  width: Get.width * 0.1,
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: EdgeInsets.only(left: Get.width * 0.04),
-                  child: Container(
-                    width: 175,
-                    child: Text(
-                      name,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyleConstant.bold18
-                          .copyWith(color: ColorConstant.black),
-                    ),
+                        .copyWith(color: ColorConstant.black),
                   ),
                 ),
               ),
               const Spacer(),
-              GestureDetector(
-                onTap: () async {
-                 await StoreRedirect.redirect(androidAppId: apkId);
-                },
-                child: Image.asset(
-                  ImageConstant.apply,
-                  height: Get.height * 0.05,),),
               Expanded(
-                flex: 2,
+                flex: 12,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () async {
+                    await StoreRedirect.redirect(androidAppId: apkId);
+                  },
                   child: Image.asset(
                     ImageConstant.apply,
                     height: Get.height * 0.05,
@@ -141,15 +112,22 @@ final RedeemedController controller =  Get.put(RedeemedController());
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                loneInterest,
-                style: TextStyleConstant.bold18
-                    .copyWith(color: ColorConstant.black),
+              Expanded(
+                flex: 1,
+                child: Text(
+                  loneInterest,
+                  style: TextStyleConstant.bold18
+                      .copyWith(color: ColorConstant.black),
+                ),
               ),
-              Text(
-                '₹ ${NumberFormat.currency(locale: 'HI').format(minLoneAmount).replaceAll("INR", '')} - ${NumberFormat.currency(locale: "HI").format(maxLoneAmount).replaceAll("INR", '')}',
-                style: TextStyleConstant.bold18
-                    .copyWith(color: ColorConstant.black),
+              Expanded(
+                flex: 3,
+                child: Text(
+                  overflow: TextOverflow.ellipsis,
+                  '₹ ${(NumberFormat.currency(locale: 'HI').format(minLoneAmount).replaceAll("INR", ''))} - ${(NumberFormat.currency(locale: "HI").format(maxLoneAmount).replaceAll("INR", ''))}',
+                  style: TextStyleConstant.bold18
+                      .copyWith(color: ColorConstant.black),
+                ),
               )
             ],
           ),
@@ -173,3 +151,5 @@ final RedeemedController controller =  Get.put(RedeemedController());
         ],
       ),
     );
+  }
+}

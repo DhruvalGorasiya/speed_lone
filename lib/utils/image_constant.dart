@@ -17,4 +17,9 @@ class ImageConstant {
   static const emiCalculator = "assets/icons/emi_cal.png";
   static const fdCalculator = "assets/icons/fd_calculator.png";
   static const sipCalculator = "assets/icons/sip_calculator.png";
+  static const loanInstant = "assets/icons/Loan Status.png";
+  static const star = "assets/icons/star.png";
+  static const gift = "assets/icons/gift-card.png";
+  static const privacy = "assets/icons/privacy-policy.png";
+  static const about = "assets/icons/information.png";
 }

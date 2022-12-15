@@ -8,4 +8,5 @@ class Routes {
   static const personalDetailView = '/personalDetailView';
   static const contactDetailView = '/contactDetailView';
   static const compareLoneCalculator = '/compareLoneCalculator';
+  static const instantLoanView = '/instantLoanView';
 }

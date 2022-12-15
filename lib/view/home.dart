@@ -1,6 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:lone_counter/controller/bottom_navigation_controller.dart';
+import 'package:lone_counter/helper/ad_helper.dart';
+import 'package:lone_counter/servics/ad_mob_services.dart';
 
 import 'package:lone_counter/utils/image_constant.dart';
 import 'package:lone_counter/utils/routes.dart';
@@ -14,9 +19,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final BottomNavigationController bottomNavigationController =
-      BottomNavigationController();
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -46,11 +48,16 @@ class _HomeViewState extends State<HomeView> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 customButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(
+                        Routes.instantLoanView,
+                      );
+                    },
                     image: ImageConstant.instantLoan,
                     context: context),
                 customButton(
                     onPressed: () {
+                      AdMobService.showRewardedInterstitialAd();
                       Get.toNamed(
                         Routes.calculatorView,
                       );

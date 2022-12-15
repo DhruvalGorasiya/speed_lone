@@ -14,9 +14,19 @@ class TextStyleConstant {
       fontWeight: FontWeight.w900);
   static const bold20 = TextStyle(
       color: ColorConstant.primaryColor,
-      fontSize:20,
+      fontSize: 20,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w900);
+  static const bold16Black = TextStyle(
+      color: ColorConstant.black,
+      fontSize: 16,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w900);
+  static const bold14Black = TextStyle(
+      color: ColorConstant.black,
+      fontSize: 14,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w500);
   static const boldGrey18 = TextStyle(
       color: ColorConstant.grey, fontSize: 16, fontWeight: FontWeight.w400);
   static const boldBlack18 = TextStyle(
