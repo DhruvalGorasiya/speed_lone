@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:lone_counter/controller/bottom_navigation_controller.dart';
+
 import 'package:lone_counter/utils/image_constant.dart';
 import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/widget/custom_button.dart';
@@ -12,6 +14,9 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final BottomNavigationController bottomNavigationController =
+      BottomNavigationController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

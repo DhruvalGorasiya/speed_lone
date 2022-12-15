@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:intl/intl.dart';
+import 'package:lone_counter/controller/redeemed_controller.dart';
 import 'package:lone_counter/model/redeemed_model.dart';
 import 'package:lone_counter/utils/colors_constant.dart';
 import 'package:lone_counter/utils/image_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
 
 class RedeemedView extends StatelessWidget {
-  const RedeemedView({Key? key}) : super(key: key);
+  RedeemedView({Key? key}) : super(key: key);
+  final RedeemedController redeemedController = Get.put(RedeemedController());
 
   @override
   Widget build(BuildContext context) {
@@ -15,21 +18,20 @@ class RedeemedView extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset('assets/backgrounds/recomadition.jpg',
-              height: Get.height,width: Get.width, fit: BoxFit.fill),
+              height: Get.height, width: Get.width, fit: BoxFit.fill),
           Padding(
             padding: EdgeInsets.only(top: Get.height / 3.6),
             child: ListView.builder(
-              itemCount: redeemedList.length,
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) {
-                return _child(
-                  maxLoneAmount: redeemedList[index].maxLoneAmount!,
-                  minLoneAmount: redeemedList[index].minLoneAmount!,
-                  name: redeemedList[index].name!,
-                  loneInterest: redeemedList[index].interestRate!,
-                );
-              },
-            ),
+                itemCount: redeemedList.length,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return _child(
+                    maxLoneAmount: redeemedList[index].maxLoneAmount!,
+                    minLoneAmount: redeemedList[index].minLoneAmount!,
+                    name: redeemedList[index].name!,
+                    loneInterest: redeemedList[index].interestRate!,
+                  );
+                }),
           ),
         ],
       ),
@@ -61,31 +63,42 @@ class RedeemedView extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                  image: AssetImage(ImageConstant.loneIcon),
-                )),
-                height: Get.height * 0.05,
-                width: Get.width * 0.1,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: Get.width * 0.04),
+              Expanded(
                 child: Container(
-                  width: 175,
-                  child: Text(
-                    name,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyleConstant.bold18
-                        .copyWith(color: ColorConstant.black),
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                    image: AssetImage(ImageConstant.loneIcon),
+                  )),
+                  height: Get.height * 0.05,
+                  width: Get.width * 0.1,
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: EdgeInsets.only(left: Get.width * 0.04),
+                  child: Container(
+                    width: 175,
+                    child: Text(
+                      name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyleConstant.bold18
+                          .copyWith(color: ColorConstant.black),
+                    ),
                   ),
                 ),
               ),
               const Spacer(),
-              Image.asset(
-                ImageConstant.apply,
-                height: Get.height * 0.05,
+              Expanded(
+                flex: 2,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Image.asset(
+                    ImageConstant.apply,
+                    height: Get.height * 0.05,
+                  ),
+                ),
               ),
             ],
           ),
@@ -121,7 +134,7 @@ class RedeemedView extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               )
             ],
-          )
+          ),
         ],
       ),
     );

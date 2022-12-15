@@ -41,6 +41,7 @@ dependencies:
   intl: ^0.17.0
   firebase_core: ^2.4.0
   cloud_firestore: ^4.2.0
+  google_mobile_ads: ^2.3.0
 
 dev_dependencies:
   flutter_test:
