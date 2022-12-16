@@ -13,4 +13,6 @@ class Routes {
   static const bankDetailView = '/bankDetailView';
   static const panDetailView = '/panDetailView';
   static const finalOfferView = '/finalOfferView';
+  static const freeMemberShipView = '/freeMemberShipView';
+  static const aboutUs = '/aboutUs';
 }

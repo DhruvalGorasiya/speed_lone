@@ -1,9 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lone_counter/utils/image_constant.dart';
+import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/utils/string_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
 import 'package:lone_counter/widget/app_bar.dart';
+import 'package:store_redirect/store_redirect.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -27,10 +31,18 @@ class _ProfileViewState extends State<ProfileView> {
       body: SafeArea(
         child: Column(
           children: [
-            card(ImageConstant.star, "Rate App"),
-            card(ImageConstant.gift, "Free MemberShip"),
-            card(ImageConstant.privacy, "Privacy Policy"),
-            card(ImageConstant.about, "About Us"),
+            GestureDetector(onTap: () async {
+              await StoreRedirect.redirect(androidAppId: 'com.example.lone_counter');
+            },child: card(ImageConstant.star, "Rate App")),
+            GestureDetector(onTap: () {
+              Get.toNamed(Routes.freeMemberShipView);
+            },child: card(ImageConstant.gift, "Free MemberShip")),
+            GestureDetector(onTap: () async {
+              await launchUrl(Uri.parse('https://rapidcashloans.blogspot.com/2022/12/privacy-policy.html'));
+            },child: card(ImageConstant.privacy, "Privacy Policy")),
+            GestureDetector(onTap: () {
+              Get.toNamed(Routes.aboutUs);
+            },child: card(ImageConstant.about, "About Us")),
           ],
         ),
       ),
