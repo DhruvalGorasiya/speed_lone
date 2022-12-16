@@ -19,6 +19,7 @@ import 'package:lone_counter/view/personal_detail_view.dart';
 import 'package:lone_counter/view/splash_view.dart';
 import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/view/log_in_view.dart';
+import 'view/fd_calculator_view.dart';
 import 'view/loan_detail_view.dart';
 
 void main() {
@@ -56,13 +57,18 @@ class MyApp extends StatelessWidget {
             name: Routes.emiCalculatorView, page: () => EmiCalculatorView()),
         GetPage(name: Routes.bankDetailView, page: () => BankDetailView()),
         GetPage(name: Routes.panDetailView, page: () => PanDetailView()),
-        GetPage(name: Routes.finalOfferView, page: () => const FinalOfferView()),
-        GetPage(name: Routes.freeMemberShipView, page: () => const MembershipView()),
+        GetPage(
+            name: Routes.finalOfferView, page: () => const FinalOfferView()),
+        GetPage(
+            name: Routes.freeMemberShipView,
+            page: () => const MembershipView()),
         GetPage(
             name: Routes.compareLoneCalculator,
             page: () => CompareLoneCalculator()),
-        GetPage(name: Routes.instantLoanView, page: () => const InstantLoanView()),
+        GetPage(
+            name: Routes.instantLoanView, page: () => const InstantLoanView()),
         GetPage(name: Routes.aboutUs, page: () => const AboutUs()),
+        GetPage(name: Routes.fdCalculatorView, page: () => FdCalculatorView()),
       ],
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.splashView,

@@ -128,42 +128,7 @@ class RedeemedView extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                child: Container(
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                    image: AssetImage(ImageConstant.loneIcon),
-                  )),
-                  height: Get.height * 0.05,
-                  width: Get.width * 0.1,
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: EdgeInsets.only(left: Get.width * 0.04),
-                  child: Container(
-                    width: 175,
-                    child: Text(
-                      name,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyleConstant.bold18
-                          .copyWith(color: ColorConstant.black),
-                    ),
-                  ),
-                ),
-              ),
               const Spacer(),
-              GestureDetector(
-                onTap: () async {
-                  await StoreRedirect.redirect(androidAppId: apkId);
-                },
-                child: Image.asset(
-                  ImageConstant.apply,
-                  height: Get.height * 0.05,
-                ),
-              ),
               Expanded(
                 flex: 12,
                 child: GestureDetector(
