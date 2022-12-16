@@ -52,9 +52,8 @@ class _CalculatorViewState extends State<CalculatorView> {
                         image: ImageConstant.fdCalculator,
                         onTap: () => Get.toNamed(Routes.fdCalculatorView)),
                     imageTap(
-                      image: ImageConstant.sipCalculator,
-                      onTap: () {},
-                    ),
+                        image: ImageConstant.sipCalculator,
+                        onTap: () => Get.toNamed(Routes.simpleCalculatorView)),
                   ],
                 ),
               ],

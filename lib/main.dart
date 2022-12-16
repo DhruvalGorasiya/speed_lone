@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:lone_counter/controller/simple_calculator_controller.dart';
 import 'package:lone_counter/network_binding.dart';
 import 'package:lone_counter/view/about_us.dart';
 import 'package:lone_counter/view/age_detail.dart';
@@ -17,6 +18,7 @@ import 'package:lone_counter/view/final_offer_view.dart';
 import 'package:lone_counter/view/membership_view.dart';
 import 'package:lone_counter/view/pan_details_view.dart';
 import 'package:lone_counter/view/personal_detail_view.dart';
+import 'package:lone_counter/view/simple_calculator.dart';
 import 'package:lone_counter/view/splash_view.dart';
 import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/view/log_in_view.dart';
@@ -43,6 +45,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: Routes.loginView, page: () => const LogInView()),
         GetPage(name: Routes.homeView, page: () => BottomNavigationScreen()),
         GetPage(name: Routes.ageDetailView, page: () => AgeDetail()),
+        GetPage(name: Routes.simpleCalculatorView, page: () => SimpleCalculator()),
         GetPage(
             name: Routes.calculatorView, page: () => const CalculatorView()),
         GetPage(

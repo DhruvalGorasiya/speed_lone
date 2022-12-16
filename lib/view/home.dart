@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:lone_counter/controller/connectivity_controller.dart';
 import 'package:lone_counter/servics/ad_mob_services.dart';
@@ -63,7 +64,8 @@ class _HomeViewState extends State<HomeView> {
                     image: ImageConstant.calculator,
                     context: context),
                 customButton(
-                    onPressed: () {},
+                    onPressed: () {
+                    },
                     image: ImageConstant.loanStatus,
                     context: context),
               ],
