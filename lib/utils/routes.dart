@@ -15,4 +15,5 @@ class Routes {
   static const finalOfferView = '/finalOfferView';
   static const freeMemberShipView = '/freeMemberShipView';
   static const aboutUs = '/aboutUs';
+  static const fdCalculatorView = '/fdCalculatorView';
 }

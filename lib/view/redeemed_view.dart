@@ -155,15 +155,6 @@ class RedeemedView extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              GestureDetector(
-                onTap: () async {
-                  await StoreRedirect.redirect(androidAppId: apkId);
-                },
-                child: Image.asset(
-                  ImageConstant.apply,
-                  height: Get.height * 0.05,
-                ),
-              ),
               Expanded(
                 flex: 12,
                 child: GestureDetector(

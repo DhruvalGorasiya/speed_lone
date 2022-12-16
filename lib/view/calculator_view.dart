@@ -34,19 +34,23 @@ class _CalculatorViewState extends State<CalculatorView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    imageTap(image: ImageConstant.emiCalculator,onTap: () {
-                      Get.toNamed(Routes.emiCalculatorView);
-                    },),
-                    imageTap(image: ImageConstant.compareLoan,onTap: () => Get.toNamed(Routes.compareLoneCalculator))
+                    imageTap(
+                      image: ImageConstant.emiCalculator,
+                      onTap: () {
+                        Get.toNamed(Routes.emiCalculatorView);
+                      },
+                    ),
+                    imageTap(
+                        image: ImageConstant.compareLoan,
+                        onTap: () => Get.toNamed(Routes.compareLoneCalculator))
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     imageTap(
-                      image: ImageConstant.fdCalculator,
-                      onTap: () {},
-                    ),
+                        image: ImageConstant.fdCalculator,
+                        onTap: () => Get.toNamed(Routes.fdCalculatorView)),
                     imageTap(
                       image: ImageConstant.sipCalculator,
                       onTap: () {},
