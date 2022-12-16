@@ -22,6 +22,11 @@ class TextStyleConstant {
       fontSize: 16,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w900);
+  static const bold15Black = TextStyle(
+      color: ColorConstant.black,
+      fontSize: 15,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w900);
   static const bold14Black = TextStyle(
       color: ColorConstant.black,
       fontSize: 14,

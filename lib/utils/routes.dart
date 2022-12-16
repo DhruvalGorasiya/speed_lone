@@ -17,4 +17,5 @@ class Routes {
   static const aboutUs = '/aboutUs';
   static const fdCalculatorView = '/fdCalculatorView';
   static const simpleCalculatorView = '/simpleCalculatorView';
+  static const loanStatusView = '/loanStatusView';
 }
