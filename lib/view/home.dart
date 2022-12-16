@@ -15,8 +15,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,7 +38,7 @@ class _HomeViewState extends State<HomeView> {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: Get.height * 0.5,
+              top: Get.height * 0.55,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -52,6 +50,7 @@ class _HomeViewState extends State<HomeView> {
                       );
                     },
                     image: ImageConstant.instantLoan,
+                    title: "Instant Loan",
                     context: context),
                 customButton(
                     onPressed: () {
@@ -61,10 +60,16 @@ class _HomeViewState extends State<HomeView> {
                       );
                     },
                     image: ImageConstant.calculator,
+                    title: "Calculator",
                     context: context),
                 customButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(
+                        Routes.loanStatusView,
+                      );
+                    },
                     image: ImageConstant.loanStatus,
+                    title: "Loan Status",
                     context: context),
               ],
             ),

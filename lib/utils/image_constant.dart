@@ -22,4 +22,6 @@ class ImageConstant {
   static const gift = "assets/icons/gift-card.png";
   static const privacy = "assets/icons/privacy-policy.png";
   static const about = "assets/icons/information.png";
+  static const congratulaion = "assets/backgrounds/Congratualtions.jpg";
+  static const checkStatus = "assets/icons/check_status.png";
 }

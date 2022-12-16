@@ -22,6 +22,7 @@ import 'package:lone_counter/utils/routes.dart';
 import 'package:lone_counter/view/log_in_view.dart';
 import 'view/fd_calculator_view.dart';
 import 'view/loan_detail_view.dart';
+import 'view/loan_status_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
             name: Routes.instantLoanView, page: () => const InstantLoanView()),
         GetPage(name: Routes.aboutUs, page: () => const AboutUs()),
         GetPage(name: Routes.fdCalculatorView, page: () => FdCalculatorView()),
+        GetPage(name: Routes.loanStatusView, page: () => LoanStatusView()),
       ],
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.splashView,
