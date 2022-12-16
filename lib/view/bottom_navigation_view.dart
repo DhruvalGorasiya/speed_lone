@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lone_counter/controller/bottom_navigation_controller.dart';
+import 'package:lone_counter/controller/connectivity_controller.dart';
 import 'package:lone_counter/utils/colors_constant.dart';
 import 'package:lone_counter/utils/image_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
@@ -9,6 +10,7 @@ class BottomNavigationScreen extends StatelessWidget {
    BottomNavigationScreen({super.key});
 
  final BottomNavigationController controller = Get.put(BottomNavigationController());
+   final InternetConnectivity internetConnectivity = Get.find<InternetConnectivity>();
 
 
   @override

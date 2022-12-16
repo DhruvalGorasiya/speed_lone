@@ -1,10 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:lone_counter/controller/bottom_navigation_controller.dart';
-import 'package:lone_counter/helper/ad_helper.dart';
+import 'package:lone_counter/controller/connectivity_controller.dart';
 import 'package:lone_counter/servics/ad_mob_services.dart';
 
 import 'package:lone_counter/utils/image_constant.dart';
@@ -19,6 +15,8 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

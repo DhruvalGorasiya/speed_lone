@@ -142,7 +142,7 @@ class RedeemedView extends StatelessWidget {
                 flex: 3,
                 child: Padding(
                   padding: EdgeInsets.only(left: Get.width * 0.04),
-                  child: Container(
+                  child: SizedBox(
                     width: 175,
                     child: Text(
                       name,

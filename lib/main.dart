@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:lone_counter/network_binding.dart';
 import 'package:lone_counter/view/about_us.dart';
 import 'package:lone_counter/view/age_detail.dart';
 import 'package:lone_counter/view/bank_detail_view.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.splashView,
+      initialBinding: NetworkBinding(),
     );
   }
 }

@@ -23,17 +23,14 @@ class BottomNavigationController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     AdMobService.createInterstitialAd();
     AdMobService.createRewardedAd();
     AdMobService.createRewardedInterstitialAd();
-    // TODO: Load a banner ad
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     AdMobService.interstitialAd?.dispose();
     AdMobService.rewardedAd?.dispose();
