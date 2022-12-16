@@ -70,7 +70,8 @@ class SimpleCalculator extends StatelessWidget {
                           GaugeRange(
                               startValue: 0,
                               endValue: 17,
-                              color: ColorConstant.primaryColor.withOpacity(0.5),
+                              color:
+                                  ColorConstant.primaryColor.withOpacity(0.5),
                               sizeUnit: GaugeSizeUnit.factor,
                               startWidth: 0.20,
                               endWidth: 0.20),
@@ -107,9 +108,11 @@ class SimpleCalculator extends StatelessWidget {
                               child: TextFormField(
                                 controller: controller.controller,
                                 decoration: InputDecoration(
-                                  fillColor: ColorConstant.primaryColor.withOpacity(0.1),
+                                  fillColor: ColorConstant.primaryColor
+                                      .withOpacity(0.1),
                                   filled: true,
-                                  contentPadding: const EdgeInsets.only(left: 30),
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 30),
                                   border: const OutlineInputBorder(
                                       borderSide: BorderSide.none),
                                 ),
@@ -126,8 +129,13 @@ class SimpleCalculator extends StatelessWidget {
                     SizedBox(
                       width: 350,
                       child: Slider(
-                        max: 100000,
+                          max: 100000,
                           min: 0,
+                          thumbColor: ColorConstant.primaryColor,
+                          activeColor:
+                              ColorConstant.primaryColor.withOpacity(0.5),
+                          inactiveColor:
+                              ColorConstant.primaryColor.withOpacity(0.5),
                           value: controller.monthlyInvestment.value,
                           onChanged: controller.monthlyInvestmentCalculation),
                     ),
@@ -149,9 +157,11 @@ class SimpleCalculator extends StatelessWidget {
                               child: TextFormField(
                                 controller: controller.returnRateController,
                                 decoration: InputDecoration(
-                                  fillColor: ColorConstant.primaryColor.withOpacity(0.1),
+                                  fillColor: ColorConstant.primaryColor
+                                      .withOpacity(0.1),
                                   filled: true,
-                                  contentPadding: const EdgeInsets.only(left: 30),
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 30),
                                   border: const OutlineInputBorder(
                                       borderSide: BorderSide.none),
                                 ),
@@ -168,8 +178,13 @@ class SimpleCalculator extends StatelessWidget {
                     SizedBox(
                       width: 350,
                       child: Slider(
-                        max: 30,
+                          max: 30,
                           min: 0,
+                          thumbColor: ColorConstant.primaryColor,
+                          activeColor:
+                              ColorConstant.primaryColor.withOpacity(0.5),
+                          inactiveColor:
+                              ColorConstant.primaryColor.withOpacity(0.5),
                           value: controller.expectedReturnRate.value,
                           onChanged: controller.expectedReturnRateCalculation),
                     ),
@@ -191,9 +206,11 @@ class SimpleCalculator extends StatelessWidget {
                               child: TextFormField(
                                 controller: controller.timePeriodController,
                                 decoration: InputDecoration(
-                                  fillColor: ColorConstant.primaryColor.withOpacity(0.1),
+                                  fillColor: ColorConstant.primaryColor
+                                      .withOpacity(0.1),
                                   filled: true,
-                                  contentPadding: const EdgeInsets.only(left: 30),
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 30),
                                   border: const OutlineInputBorder(
                                       borderSide: BorderSide.none),
                                 ),
@@ -210,9 +227,14 @@ class SimpleCalculator extends StatelessWidget {
                     SizedBox(
                       width: 350,
                       child: Slider(
-                        max: 30,
+                          max: 30,
                           min: 0,
                           value: controller.timePeriod.value,
+                          thumbColor: ColorConstant.primaryColor,
+                          activeColor:
+                              ColorConstant.primaryColor.withOpacity(0.5),
+                          inactiveColor:
+                              ColorConstant.primaryColor.withOpacity(0.5),
                           onChanged: controller.timePeriodCalculation),
                     ),
                     const SizedBox(height: 10),

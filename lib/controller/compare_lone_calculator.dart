@@ -5,8 +5,6 @@ import 'package:get/get.dart';
 
 class CompareLoneCalculatorController extends GetxController {
   TextEditingController loanAmountController = TextEditingController();
-  TextEditingController interestRateController = TextEditingController();
-  TextEditingController durationController = TextEditingController();
 
   RxDouble loanAmount = 1.0.obs;
   RxDouble interestRate = 1.0.obs;
