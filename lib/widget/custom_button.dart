@@ -38,6 +38,21 @@ Widget elevatedButton(VoidCallback onTap, {String? text}) {
   );
 }
 
+Widget fixedWidthButton({required String text,required VoidCallback onTap,TextStyle? textStyle}){
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      width: 80,
+      height: 30,
+      decoration: BoxDecoration(
+      color: ColorConstant.primaryColor,
+        borderRadius: BorderRadius.circular(5)
+      ),
+      child: Center(child: Text(text,style: textStyle)),
+    ),
+  );
+}
+
 Widget textField(
     {required String title,
     required String hintText,

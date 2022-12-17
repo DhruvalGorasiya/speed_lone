@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lone_counter/utils/colors_constant.dart';
 import 'package:lone_counter/utils/image_constant.dart';
-import 'package:lone_counter/utils/string_constant.dart';
 import 'package:lone_counter/utils/text_style_constant.dart';
-import 'package:lone_counter/widget/app_bar.dart';
 
 class LoanStatusView extends StatelessWidget {
   const LoanStatusView({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
