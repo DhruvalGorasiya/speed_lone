@@ -1,0 +1,2 @@
+bool showRateDialog = false;
+

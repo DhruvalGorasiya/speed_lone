@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:lone_counter/controller/simple_calculator_controller.dart';
 import 'package:lone_counter/network_binding.dart';
 import 'package:lone_counter/view/about_us.dart';
 import 'package:lone_counter/view/age_detail.dart';
