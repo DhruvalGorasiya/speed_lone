@@ -10,7 +10,7 @@ class ImageConstant {
   static const homeBG = "assets/backgrounds/Home.jpg";
   static const applyNow = "assets/icons/apply_now.png";
   static const calculator = "assets/icons/calculator.png";
-  static const instantLoan = "assets/icons/instantloan.png";
+  static const instantLoan = "assets/icons/instant_loan.png";
   static const loanStatus = "assets/icons/loan_status.png";
   static const calculatorBG = "assets/backgrounds/Calculator.jpg";
   static const compareLoan = "assets/icons/comp_loan.png";
@@ -22,6 +22,6 @@ class ImageConstant {
   static const gift = "assets/icons/gift-card.png";
   static const privacy = "assets/icons/privacy-policy.png";
   static const about = "assets/icons/information.png";
-  static const congratulaion = "assets/backgrounds/Congratualtions.jpg";
+  static const congratulations = "assets/backgrounds/Congratulations.jpg";
   static const checkStatus = "assets/icons/check_status.png";
 }
